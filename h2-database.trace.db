@@ -1,0 +1,27 @@
+2024-08-06 11:02:53.753638-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]table FINESHD_AT"; expected "identifier"; SQL statement:
+delete table FINESHD_AT [42001-224]
+2024-08-06 11:03:10.818795-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINESHD_AT" not found; SQL statement:
+drop table FINESHD_AT [42102-224]
+2024-08-06 11:03:39.724593-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]table FINESHD_AT"; expected "identifier"; SQL statement:
+delete table FINESHD_AT [42001-224]
+2024-08-06 11:11:16.774359-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINESHD_AT" not found; SQL statement:
+DROP TABLE FINESHD_AT  CASCADE [42102-224]
+2024-08-06 11:12:20.593373-03:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FINESHD_AT" not found; SQL statement:
+delete from FINESHD_AT [42102-224]
+2024-08-06 11:46:23.880767-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into TODO (TITLE ,DEADLINE ,CREATED_AT  [*]VALUES ('Estudar Spring', '2024'-02-16', '2024'-01-01 00:00:00.0')"; expected ",, )"; SQL statement:
+insert into TODO (TITLE ,DEADLINE ,CREATED_AT  VALUES ('Estudar Spring', '2024'-02-16', '2024'-01-01 00:00:00.0') [42001-224]
+2024-08-06 11:46:55.554646-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO TODO (TITLE ,DEADLINE ,CREATED_AT)  VALUES ('Estudar Spring', '2024'-02-16[*]', '2024'-01-01 00:00:00.0')"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO TODO (TITLE ,DEADLINE ,CREATED_AT)  VALUES ('Estudar Spring', '2024'-02-16', '2024'-01-01 00:00:00.0') [42001-224]
+2024-08-06 11:49:05.116167-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER [*]TABLETODO DROP COLUMN FINESHD_AT"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW, DOMAIN"; SQL statement:
+ALTER TABLETODO DROP COLUMN FINESHD_AT [42001-224]
+2024-08-06 11:50:19.193823-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "Select ( [*]from TODO"; expected "), INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+Select ( from TODO [42001-224]
