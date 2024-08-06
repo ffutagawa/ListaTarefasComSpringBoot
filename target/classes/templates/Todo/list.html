@@ -45,7 +45,7 @@
         </tbody>
     </table>
     <p th:if="${#lists.isEmpty(todos)}">Nenhuma tarefa cadastrada</p>
-    <a href="" class="btn btn-sm btn-primary"> Nova Tarefa</a>
+    <a th:href="@{/create}" class="btn btn-sm btn-primary"> Nova Tarefa</a>
 </main>
 
 
