@@ -108,4 +108,8 @@ public class Todo {
                 ", title='" + title + '\'' +
                 '}';
     }
+
+    public void markHasFinished(){
+        this.fineshedAt = LocalDate.now();
+    }
 }

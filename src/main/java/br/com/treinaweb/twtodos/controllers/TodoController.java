@@ -4,6 +4,7 @@ import br.com.treinaweb.twtodos.models.Todo;
 import br.com.treinaweb.twtodos.repositories.TodoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -29,7 +30,7 @@ public class TodoController {
     @GetMapping("/")
     public ModelAndView list() {
         var modelAndView = new ModelAndView("todo/list");
-        modelAndView.addObject("todos", todoRepository.findAll());
+        modelAndView.addObject("todos", todoRepository.findAll(Sort.by("deadline"))); //Ordenar pela data de entrega
         return modelAndView;
 
 //     outra maneira desta maneira abaixo
@@ -80,6 +81,18 @@ public class TodoController {
     @PostMapping("/delete/{id}")
     public String delete(Todo todo){
         todoRepository.delete(todo);
+        return "redirect:/";
+    }
+
+    @PostMapping("/finish/{id}")
+    public String finish(@PathVariable Long id){
+        var optionalTodo = todoRepository.findById(id);
+        if(optionalTodo.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        var todo = optionalTodo.get();
+        todo.markHasFinished();
+        todoRepository.save(todo);
         return "redirect:/";
     }
 

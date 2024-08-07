@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,9 +37,14 @@
             <td th:text="${#temporals.format(todo.deadline)}">@mdo</td>
             <td th:text="${#temporals.format(todo.fineshedAt)} ?:'-'">@mdo</td>
             <td>
-                <a href="" class="btn btn-sm btn-primary">Concluir</a>
-                <a th:href="@{/edit/{id}(id=${todo.id})}" class="btn btn-sm btn-secondary">Editar</a>
-                <a th:href="@{/delete/{id}(id=${todo.id})}" class="btn btn-sm btn-danger">Excluir</a>
+                <form class="d-inline" th:action="@{/finish/{id}(id=${todo.id})}" method="POST">
+                    <button type="submit" class="btn btn-sm btn-primary">Concluir</button>
+                </form>
+
+                <a th:href="@{/edit/{id}(id=${todo.id})}" class="btn btn-sm btn-secondary"
+                   th:classappend="${todo.fineshedAt} ? 'disabled' : ''">Editar</a>
+                <a th:href="@{/delete/{id}(id=${todo.id})}" class="btn btn-sm btn-danger"
+                   th:classappend="${todo.fineshedAt} ? 'disabled' : ''">Excluir</a>
             </td>
         </tr>
         </tbody>
