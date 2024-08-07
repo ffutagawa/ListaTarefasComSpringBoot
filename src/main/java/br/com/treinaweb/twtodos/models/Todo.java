@@ -1,6 +1,7 @@
 package br.com.treinaweb.twtodos.models;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,9 +18,11 @@ public class Todo {
     private String title;
 
     @Column(nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate deadline;
 
     @Column(nullable = true)
